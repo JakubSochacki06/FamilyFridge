@@ -1,0 +1,50 @@
+name: familyfridge
+description: Check current available food from your food stash in a second!s.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.4 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  provider: ^6.0.5
+  google_sign_in: ^6.1.5
+  cloud_firestore: ^4.12.1
+  firebase_auth: ^4.12.0
+  uuid: ^4.1.0
+  firebase_core: ^2.20.0
+  google_nav_bar: ^5.0.6
+  line_icons: ^2.0.3
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+
+  fonts:
+    - family: FranklinGothicMedium
+      fonts:
+        - asset: assets/fonts/FranklinGothicMediumRegular.ttf
+        - asset: assets/fonts/FranklinGothicMediumItalic.ttf
+          style: italic
+  #   - images/a_dot_ham.jpeg
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700

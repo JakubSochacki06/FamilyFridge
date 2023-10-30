@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>279165111660-tmk4ruit187hpk0fpr1qnm0mhlno73o3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.279165111660-tmk4ruit187hpk0fpr1qnm0mhlno73o3</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>279165111660-b59ellgt5q6nva1rg9hg9tvobnr532pf.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAFRsvdgAvcFRnJZbX0VLmGu5AH8sl5IiY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>279165111660</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.familyfridgefinal</string>
+	<key>PROJECT_ID</key>
+	<string>familyfridgefinal</string>
+	<key>STORAGE_BUCKET</key>
+	<string>familyfridgefinal.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:279165111660:ios:64d5f4e9fbff8e56b6b749</string>
+</dict>
+</plist>

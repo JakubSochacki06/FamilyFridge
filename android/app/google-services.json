@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "279165111660",
+    "project_id": "familyfridgefinal",
+    "storage_bucket": "familyfridgefinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279165111660:android:ca15ff85a22c5a44b6b749",
+        "android_client_info": {
+          "package_name": "com.example.familyfridgefinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279165111660-lalds5f2da2h5ei487781j6adastreio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBfhCGjvPqloMkt6gxjq2MB_DfzGFkvFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279165111660-lalds5f2da2h5ei487781j6adastreio.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "279165111660-nq7sk4vhfs7husd0ucc68vvpdlv01ip1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.familyfridge"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

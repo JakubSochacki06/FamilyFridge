@@ -8,9 +8,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<FirebaseUserProvider>(builder: (context, value, child) {
-      print(value.user.displayName);
-      value.changeName('imie');
-      print(value.user.displayName);
       return Column(
         children: [
           Center(

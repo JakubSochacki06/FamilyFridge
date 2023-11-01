@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/landing': (context) => const LandingPage(),
-          '/page_navigator': (context) => PageNavigator(userEmail:FirebaseAuth.instance.currentUser!.email!),
+          '/page_navigator': (context) => PageNavigator(),
           '/logging': (context) => LoggingPage(),
         },
         initialRoute: isLogged? '/page_navigator':'/landing',

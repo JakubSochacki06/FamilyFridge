@@ -9,7 +9,8 @@ class FirebaseUserProvider extends ChangeNotifier {
 
   Future<void> setUserData(String email) async{
     DatabaseService db = DatabaseService();
-    _user = await db.getUser(email);
+    FirebaseUser user = await db.getUser(email);
+    _user = user;
     // notifyListeners();
   }
 

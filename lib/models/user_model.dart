@@ -8,11 +8,12 @@ class FirebaseUser {
 
   factory FirebaseUser.fromMap(Map<String, dynamic> data){
     FirebaseUser user = FirebaseUser(
-      displayName: data['displayName'] ?? '',
-      email: data['email'] ?? '',
-      familyID: data['familyID'] ?? '',
-      photoURL: data['photoURL'] ?? '',
+      displayName: data['displayName'],
+      email: data['email'],
+      familyID: data['familyID'],
+      photoURL: data['photoURL'],
     );
     return user;
   }
+
 }

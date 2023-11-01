@@ -23,7 +23,7 @@ class _LoggingPageState extends State<LoggingPage> {
           } else if (snapshot.hasData) {
             DatabaseService dbs = DatabaseService();
             dbs.setUserDataFromGoogle(FirebaseAuth.instance.currentUser!);
-            return PageNavigator(userEmail:FirebaseAuth.instance.currentUser!.email!);
+            return PageNavigator();
           } else if (snapshot.hasError) {
             return const Center(child: Text('Something went Wrong!'));
           } else {

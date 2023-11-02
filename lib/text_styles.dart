@@ -17,3 +17,16 @@ const kLandingPageGoogleButtonTextStyle = TextStyle(
     fontFamily: 'FranklinGothicMedium',
     color: Colors.black
 );
+
+const kFriendsPageMainTextStyle = TextStyle(
+    fontSize: 20,
+    fontFamily: 'FranklinGothicMedium',
+    color: Colors.black
+);
+
+const kFriendsPageCodeTextStyle = TextStyle(
+    fontSize: 22,
+    fontFamily: 'FranklinGothicMedium',
+    fontStyle: FontStyle.italic,
+    color: Colors.orangeAccent
+);

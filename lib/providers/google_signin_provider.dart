@@ -18,9 +18,6 @@ class GoogleSignInProvider extends ChangeNotifier {
     final googleAuth = await googleUser.authentication;
     final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
-    // final db = FirebaseFirestore.instance;
-    // DateTime now = DateTime.now();
-    print('test');
     await FirebaseAuth.instance.signInWithCredential(credential);
     notifyListeners();
   }

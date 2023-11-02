@@ -11,7 +11,6 @@ class FirebaseUserProvider extends ChangeNotifier {
     DatabaseService db = DatabaseService();
     FirebaseUser user = await db.getUser(email);
     _user = user;
-    // notifyListeners();
   }
 
   void changeName(String name){

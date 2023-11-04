@@ -13,7 +13,7 @@ class FirebaseUserProvider extends ChangeNotifier {
     _user = user;
   }
 
-  void changeName(String name){
-    _user.displayName = name;
+  void changeFamilyID(String familyID){
+    _user.familyID = familyID;
   }
 }

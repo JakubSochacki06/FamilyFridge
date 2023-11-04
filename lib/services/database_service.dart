@@ -52,6 +52,7 @@ class DatabaseService {
   }
 
   Future<dynamic> getDataFromFirestore(String collection, String documentID, String field) async {
+    updateDatabase();
     await for (var snapshot in _db.collection(collection).snapshots()) {
       for (var message in snapshot.docs) {
         if(message.id == documentID){
@@ -71,6 +72,19 @@ class DatabaseService {
     }, SetOptions(merge : true));
   }
 
+  Future<void> addFoodToFridge(String familyID, Map<String, Map<String,dynamic>> foodInfo) async{
+    Map<String, dynamic> foodInFridge = await getDataFromFirestore('families', familyID, 'food');
+    print(foodInFridge);
+    print(foodInfo);
+    foodInfo.forEach((key, value) {
+      print(value);
+      foodInFridge[key] == null ? foodInFridge[key] = value : foodInFridge[key]['quantity'] += foodInfo[key]!['quantity'];
+    });
+    await _db.collection('families').doc(familyID).set({
+      'food':foodInFridge
+    }, SetOptions(merge : true));
+  }
+
   Future<void> addUserToFamily(String userEmail, String newFamilyID, String oldFamilyID) async {
     List<dynamic> newMembersEmails = await getDataFromFirestore('families', newFamilyID, 'membersEmails');
     List<dynamic> oldMembersEmails = await getDataFromFirestore('families', newFamilyID, 'membersEmails');
@@ -80,4 +94,6 @@ class DatabaseService {
     }
     await _db.collection('families').doc(newFamilyID).set({'membersEmails':newMembersEmails}, SetOptions(merge : true));
   }
+
+  // Future<Stream<>>
 }

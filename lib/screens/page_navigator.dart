@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:familyfridge/providers/firebase_user_provider.dart';
 import 'family_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:familyfridge/screens/add_food_page.dart';
 
 class PageNavigator extends StatefulWidget {
   @override
@@ -19,13 +20,11 @@ class _PageNavigatorState extends State<PageNavigator> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static List<Widget> _widgetOptions = <Widget>[
-    Text('test'),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
-    FamilyPage(),
-    ProfilePage()
+    const Text('test'),
+    const AddFoodPage(),
+
+    const FamilyPage(),
+    const ProfilePage()
   ];
 
   @override
@@ -66,24 +65,24 @@ class _PageNavigatorState extends State<PageNavigator> {
                 gap: 8,
                 activeColor: Colors.black,
                 iconSize: 24,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                duration: Duration(milliseconds: 400),
-                tabBackgroundColor: Color(0xFFFAC898),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                duration: const Duration(milliseconds: 400),
+                tabBackgroundColor: const Color(0xFFFAC898),
                 color: Colors.black,
                 tabs: [
-                  GButton(
+                  const GButton(
                     icon: Icons.kitchen_outlined,
                     text: 'Fridge',
                   ),
-                  GButton(
+                  const GButton(
                     icon: Icons.assessment_outlined,
                     text: 'Statistics',
                   ),
-                  GButton(
+                  const GButton(
                     icon: Icons.groups_outlined,
                     text: 'Family',
                   ),
-                  GButton(
+                  const GButton(
                     icon: Icons.checklist_outlined,
                     text: 'Shopping list',
                   ),

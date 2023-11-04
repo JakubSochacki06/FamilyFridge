@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:familyfridge/providers/firebase_user_provider.dart';
 import 'package:familyfridge/text_styles.dart';
-import 'package:familyfridge/widgets/friend_card.dart';
+import 'package:familyfridge/widgets/family_card.dart';
 
 class FamilyPage extends StatefulWidget {
   const FamilyPage({super.key});
@@ -93,8 +93,8 @@ class _FamilyPageState extends State<FamilyPage> {
                         db.updateDatabase();
                         await db.addUserToFamily(provider.user.email!, controller.text, provider.user.familyID!);
                         await db.insertUserData(provider.user.email!, 'familyID', controller.text);
+                        provider.changeFamilyID(controller.text);
                         controller.clear();
-                        await provider.setUserData(provider.user.email!);
                         setState(() {});
                       },
                       style: ElevatedButton.styleFrom(

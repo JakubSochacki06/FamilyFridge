@@ -30,3 +30,9 @@ const kFriendsPageCodeTextStyle = TextStyle(
     fontStyle: FontStyle.italic,
     color: Colors.orangeAccent
 );
+
+const kFridgePageMainTextStyle = TextStyle(
+    fontSize: 22,
+    fontFamily: 'FranklinGothicMedium',
+    color: Colors.black
+);

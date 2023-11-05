@@ -18,21 +18,28 @@ const kLandingPageGoogleButtonTextStyle = TextStyle(
     color: Colors.black
 );
 
-const kFriendsPageMainTextStyle = TextStyle(
+const kFamilyPageMainTextStyle = TextStyle(
     fontSize: 20,
     fontFamily: 'FranklinGothicMedium',
     color: Colors.black
 );
 
-const kFriendsPageCodeTextStyle = TextStyle(
+const kFamilyPageCodeTextStyle = TextStyle(
     fontSize: 22,
     fontFamily: 'FranklinGothicMedium',
     fontStyle: FontStyle.italic,
     color: Colors.orangeAccent
 );
 
-const kFridgePageMainTextStyle = TextStyle(
+const kAddFoodPageMainTextStyle = TextStyle(
     fontSize: 22,
     fontFamily: 'FranklinGothicMedium',
+    color: Colors.black
+);
+
+const kFridgePageMainTextStyle = TextStyle(
+    fontSize: 28,
+    fontFamily: 'FranklinGothicMedium',
+    fontStyle: FontStyle.italic,
     color: Colors.black
 );

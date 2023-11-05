@@ -1,3 +1,4 @@
+import 'package:familyfridge/screens/add_food_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
           '/landing': (context) => const LandingPage(),
           '/page_navigator': (context) => PageNavigator(),
           '/logging': (context) => LoggingPage(),
+          '/add_food':(context) => AddFoodPage(),
         },
         initialRoute: isLogged? '/page_navigator':'/landing',
       ),

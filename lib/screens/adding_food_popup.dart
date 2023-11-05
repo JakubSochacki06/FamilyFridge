@@ -16,7 +16,7 @@ class AddFoodPopup extends StatelessWidget {
     return Consumer<FirebaseUserProvider>(
       builder: (_, provider, child) => Container(
         width: 400,
-        height: 500,
+        height: 400,
         padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -28,7 +28,7 @@ class AddFoodPopup extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Text(
                 'Add extra info about your food',
                 textAlign: TextAlign.center,
@@ -68,6 +68,7 @@ class AddFoodPopup extends StatelessWidget {
                 onPressed: () {
                   DatabaseService db = DatabaseService();
                   db.addFoodToFridge(provider.user.familyID!, foodInfo);
+                  Navigator.pop(context);
                   Navigator.pop(context);
                 },
                 child: const Text(

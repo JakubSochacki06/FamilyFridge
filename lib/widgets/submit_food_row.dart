@@ -110,7 +110,7 @@ class _SubmitFoodRowState extends State<SubmitFoodRow> {
           width: width * 0.17,
           child: TextField(
             controller: expYearController,
-            maxLength: 2,
+            maxLength: 4,
             onChanged: widget.onChangedYear,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(

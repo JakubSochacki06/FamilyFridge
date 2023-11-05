@@ -74,10 +74,7 @@ class DatabaseService {
 
   Future<void> addFoodToFridge(String familyID, Map<String, Map<String,dynamic>> foodInfo) async{
     Map<String, dynamic> foodInFridge = await getDataFromFirestore('families', familyID, 'food');
-    print(foodInFridge);
-    print(foodInfo);
     foodInfo.forEach((key, value) {
-      print(value);
       foodInFridge[key] == null ? foodInFridge[key] = value : foodInFridge[key]['quantity'] += foodInfo[key]!['quantity'];
     });
     await _db.collection('families').doc(familyID).set({
@@ -95,5 +92,23 @@ class DatabaseService {
     await _db.collection('families').doc(newFamilyID).set({'membersEmails':newMembersEmails}, SetOptions(merge : true));
   }
 
-  // Future<Stream<>>
+  Stream<DocumentSnapshot<Map<String, dynamic>>> streamFamilyData(String familyID) {
+    return _db.collection('families').doc(familyID).snapshots();
+  }
+
+  Future<void> addSingleFoodToFridge(String familyID, String foodName) async{
+    Map<String, dynamic> foodInFridge = await getDataFromFirestore('families', familyID, 'food');
+    foodInFridge[foodName]['quantity'] += 1;
+    await _db.collection('families').doc(familyID).set({
+      'food':foodInFridge
+    }, SetOptions(merge : true));
+  }
+  Future<void> removeSingleFoodToFridge(String familyID, String foodName) async{
+    Map<String, dynamic> foodInFridge = await getDataFromFirestore('families', familyID, 'food');
+    foodInFridge[foodName]['quantity'] == 1? foodInFridge.remove(foodName) : foodInFridge[foodName]['quantity'] -= 1;
+    print(foodInFridge);
+    await _db.collection('families').doc(familyID).set({
+      'food':foodInFridge
+    }, SetOptions(merge : true));
+  }
 }

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:familyfridge/data/food.dart';
 
 class IngredientCard extends StatelessWidget {
   final String name;
-  final double calories;
-  final double carbohydrates;
-  final double fats;
-  final double proteins;
   final bool isActive;
   final onTap;
 
-  IngredientCard({required this.name, required this.calories, required this.carbohydrates, required this.fats, required this.proteins, required this.isActive, required this.onTap});
+  IngredientCard({required this.name, required this.isActive, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -42,25 +39,25 @@ class IngredientCard extends StatelessWidget {
                 Column(
                   children: [
                     Text('Kcal'),
-                    Text(calories.toString())
+                    Text(ingredientsList[name]['calories'].toString())
                   ],
                 ),
                 Column(
                   children: [
                     Text('Carbs'),
-                    Text(carbohydrates.toString())
+                    Text(ingredientsList[name]['carbohydrates'].toString())
                   ],
                 ),
                 Column(
                   children: [
                     Text('Fats'),
-                    Text(fats.toString())
+                    Text(ingredientsList[name]['fats'].toString())
                   ],
                 ),
                 Column(
                   children: [
                     Text('Proteins'),
-                    Text(proteins.toString())
+                    Text(ingredientsList[name]['proteins'].toString())
                   ],
                 ),
               ],

@@ -1,4 +1,5 @@
 import 'package:familyfridge/models/user_model.dart';
+import 'package:familyfridge/screens/fridge_page.dart';
 import 'package:familyfridge/services/database_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -9,6 +10,7 @@ import 'package:familyfridge/providers/firebase_user_provider.dart';
 import 'family_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:familyfridge/screens/add_food_page.dart';
+import 'family_page.dart';
 
 class PageNavigator extends StatefulWidget {
   @override
@@ -20,8 +22,8 @@ class _PageNavigatorState extends State<PageNavigator> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static List<Widget> _widgetOptions = <Widget>[
+    const FridgePage(),
     const Text('test'),
-    const AddFoodPage(),
 
     const FamilyPage(),
     const ProfilePage()

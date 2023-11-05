@@ -65,7 +65,7 @@ class _AddFoodPageState extends State<AddFoodPage> {
             child: Center(
               child: Text(
                 'Select food that you would\nlike to add to your fridge!',
-                style: kFridgePageMainTextStyle,
+                style: kAddFoodPageMainTextStyle,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -73,16 +73,14 @@ class _AddFoodPageState extends State<AddFoodPage> {
           Expanded(
             child: TextField(
               controller: searchController,
-              onChanged: (String value) {
+              onChanged: (String query) {
                 setState(() {
                   sortedIngredients = [];
-                  for (dynamic foodSpecs in ingredientsList) {
-                    if (foodSpecs['name']
-                        .toLowerCase()
-                        .contains(value.toLowerCase())) {
-                      sortedIngredients.add(foodSpecs);
+                  ingredientsList.forEach((key, value) {
+                    if(key.toLowerCase().contains(query)){
+                      sortedIngredients.add(value);
                     }
-                  }
+                  });
                 });
               },
               keyboardType: TextInputType.text,
@@ -104,7 +102,18 @@ class _AddFoodPageState extends State<AddFoodPage> {
           SizedBox(
             height: 10,
           ),
-          Expanded(
+          sortedIngredients.length == 0 &&
+              searchController.text.length > 0
+              ? Expanded(
+            flex: 11,
+            child: Center(
+                child: Text(
+                  'Can\'t find what you are looking for!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 22),
+                )),
+          )
+              : Expanded(
             flex: 11,
             child: GridView.builder(
               itemCount: sortedIngredients.length == 0
@@ -118,15 +127,10 @@ class _AddFoodPageState extends State<AddFoodPage> {
               itemBuilder: (_, index) {
                 List<dynamic> availableIngredients =
                     sortedIngredients.length == 0
-                        ? ingredientsList
+                        ? ingredientsList.values.toList()
                         : sortedIngredients;
                 return IngredientCard(
                   name: availableIngredients[index]['name'],
-                  calories: availableIngredients[index]['calories'].toDouble(),
-                  carbohydrates:
-                      availableIngredients[index]['carbohydrates'].toDouble(),
-                  fats: availableIngredients[index]['fats'].toDouble(),
-                  proteins: availableIngredients[index]['proteins'].toDouble(),
                   isActive: ingredientsSelected
                       .contains(availableIngredients[index]['name']),
                   onTap: () {

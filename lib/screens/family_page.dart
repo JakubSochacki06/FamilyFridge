@@ -41,11 +41,11 @@ class _FamilyPageState extends State<FamilyPage> {
               RichText(
                 text: TextSpan(
                   text: 'Your code: ',
-                  style: kFriendsPageMainTextStyle,
+                  style: kFamilyPageMainTextStyle,
                   children: [
                     TextSpan(
                         text: provider.user.familyID,
-                        style: kFriendsPageCodeTextStyle,
+                        style: kFamilyPageCodeTextStyle,
                     ),
                   ],
                 ),
@@ -113,7 +113,7 @@ class _FamilyPageState extends State<FamilyPage> {
                   )
                 ],
               ),
-              const Text('Your Fridge Family', style: kFriendsPageMainTextStyle,),
+              const Text('Your Fridge Family', style: kFamilyPageMainTextStyle,),
               Expanded(
                 child: FutureBuilder(
                   future: db.getFriends(provider.user),

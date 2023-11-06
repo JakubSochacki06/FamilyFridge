@@ -11,6 +11,7 @@ import 'family_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:familyfridge/screens/add_food_page.dart';
 import 'family_page.dart';
+import 'find_recipe_page.dart';
 
 class PageNavigator extends StatefulWidget {
   @override
@@ -23,8 +24,7 @@ class _PageNavigatorState extends State<PageNavigator> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static List<Widget> _widgetOptions = <Widget>[
     const FridgePage(),
-    const Text('test'),
-
+    FindRecipePage(),
     const FamilyPage(),
     const ProfilePage()
   ];

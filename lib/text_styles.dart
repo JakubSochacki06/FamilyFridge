@@ -43,3 +43,9 @@ const kFridgePageMainTextStyle = TextStyle(
     fontStyle: FontStyle.italic,
     color: Colors.black
 );
+
+const kFridgePageStashTextStyle = TextStyle(
+    fontSize: 24,
+    fontFamily: 'FranklinGothicMedium',
+    color: Colors.black
+);

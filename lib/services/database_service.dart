@@ -51,11 +51,12 @@ class DatabaseService {
     });
   }
 
-  Future<dynamic> getDataFromFirestore(String collection, String documentID, String field) async {
+  Future<dynamic> getDataFromFirestore(String collection, String documentID,
+      String field) async {
     updateDatabase();
     await for (var snapshot in _db.collection(collection).snapshots()) {
       for (var message in snapshot.docs) {
-        if(message.id == documentID){
+        if (message.id == documentID) {
           return message.data()[field];
         }
       }
@@ -66,49 +67,68 @@ class DatabaseService {
     _db = FirebaseFirestore.instance;
   }
 
-  Future<void> insertUserData(String email, String field, String value) async{
+  Future<void> insertUserData(String email, String field, String value) async {
     await _db.collection('users_data').doc(email).set({
-      field:value
-    }, SetOptions(merge : true));
+      field: value
+    }, SetOptions(merge: true));
   }
 
-  Future<void> addFoodToFridge(String familyID, Map<String, Map<String,dynamic>> foodInfo) async{
-    Map<String, dynamic> foodInFridge = await getDataFromFirestore('families', familyID, 'food');
+  Future<void> addFoodToFridge(String familyID,
+      Map<String, Map<String, dynamic>> foodInfo) async {
+    Map<String, dynamic> foodInFridge = await getDataFromFirestore(
+        'families', familyID, 'food');
     foodInfo.forEach((key, value) {
-      foodInFridge[key] == null ? foodInFridge[key] = value : foodInFridge[key]['quantity'] += foodInfo[key]!['quantity'];
+      foodInFridge[key] == null
+          ? foodInFridge[key] = value
+          : foodInFridge[key]['quantity'] += foodInfo[key]!['quantity'];
     });
     await _db.collection('families').doc(familyID).set({
-      'food':foodInFridge
-    }, SetOptions(merge : true));
+      'food': foodInFridge
+    }, SetOptions(merge: true));
   }
 
-  Future<void> addUserToFamily(String userEmail, String newFamilyID, String oldFamilyID) async {
-    List<dynamic> newMembersEmails = await getDataFromFirestore('families', newFamilyID, 'membersEmails');
-    List<dynamic> oldMembersEmails = await getDataFromFirestore('families', newFamilyID, 'membersEmails');
+  Future<void> addUserToFamily(String userEmail, String newFamilyID,
+      String oldFamilyID) async {
+    List<dynamic> newMembersEmails = await getDataFromFirestore(
+        'families', newFamilyID, 'membersEmails');
+    List<dynamic> oldMembersEmails = await getDataFromFirestore(
+        'families', newFamilyID, 'membersEmails');
     newMembersEmails.add(userEmail);
-    if(oldMembersEmails.length == 1){
+    if (oldMembersEmails.length == 1) {
       _db.collection('families').doc(oldFamilyID).delete();
     }
-    await _db.collection('families').doc(newFamilyID).set({'membersEmails':newMembersEmails}, SetOptions(merge : true));
+    await _db.collection('families').doc(newFamilyID).set(
+        {'membersEmails': newMembersEmails}, SetOptions(merge: true));
   }
 
-  Stream<DocumentSnapshot<Map<String, dynamic>>> streamFamilyData(String familyID) {
+  Stream<DocumentSnapshot<Map<String, dynamic>>> streamFamilyData(
+      String familyID) {
     return _db.collection('families').doc(familyID).snapshots();
   }
 
-  Future<void> addSingleFoodToFridge(String familyID, String foodName) async{
-    Map<String, dynamic> foodInFridge = await getDataFromFirestore('families', familyID, 'food');
+  Future<void> addSingleFoodToFridge(String familyID, String foodName) async {
+    Map<String, dynamic> foodInFridge = await getDataFromFirestore(
+        'families', familyID, 'food');
     foodInFridge[foodName]['quantity'] += 1;
     await _db.collection('families').doc(familyID).set({
-      'food':foodInFridge
-    }, SetOptions(merge : true));
+      'food': foodInFridge
+    }, SetOptions(merge: true));
   }
-  Future<void> removeSingleFoodToFridge(String familyID, String foodName) async{
-    Map<String, dynamic> foodInFridge = await getDataFromFirestore('families', familyID, 'food');
-    foodInFridge[foodName]['quantity'] == 1? foodInFridge.remove(foodName) : foodInFridge[foodName]['quantity'] -= 1;
+
+  Future<void> removeSingleFoodToFridge(String familyID,
+      String foodName) async {
+    Map<String, dynamic> foodInFridge = await getDataFromFirestore(
+        'families', familyID, 'food');
     print(foodInFridge);
-    await _db.collection('families').doc(familyID).set({
-      'food':foodInFridge
-    }, SetOptions(merge : true));
+    if (foodInFridge[foodName]['quantity'] == 1) {
+      foodInFridge.remove(foodName);
+    } else {
+      foodInFridge[foodName]['quantity'] -= 1;
+    };
+    await _db.collection('families').doc(familyID).update({
+      'food': foodInFridge,
+    });
+    print('set');
+    print(foodInFridge);
   }
 }

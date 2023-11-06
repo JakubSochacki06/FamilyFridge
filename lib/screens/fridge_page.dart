@@ -35,12 +35,11 @@ class _FridgePageState extends State<FridgePage> {
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Color(0xFFF86E45),
-        label: Text('+',
-          style: TextStyle(
-            fontSize: 30,
-              color: Colors.white),
+        label: Text(
+          '+',
+          style: TextStyle(fontSize: 30, color: Colors.white),
         ),
-        onPressed:  () {
+        onPressed: () {
           Navigator.pushNamed(context, '/add_food');
         },
       ),
@@ -105,18 +104,19 @@ class _FridgePageState extends State<FridgePage> {
                     SizedBox(
                       height: 10,
                     ),
-                    sortedIngredients.length == 0 &&
-                            searchController.text.length > 0
-                        ? Expanded(
-                            flex: 11,
-                            child: Center(
-                                child: Text(
-                              'Can\'t find what you are looking for!',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 22),
-                            )),
-                          )
-                        : Expanded(
+                    foodInFridge.length == 0? Expanded(
+                      flex: 11,
+                      child: Center(child: Text('Your fridge is empty!\nAdd food to it by clicking on a "+" button', style: kFridgePageStashTextStyle, textAlign: TextAlign.center,)),
+                    ) : sortedIngredients.length == 0 && searchController.text.length > 0 ?
+                    Expanded(
+                      flex: 11,
+                      child: Center(
+                          child: Text(
+                            'Can\'t find what you are looking for!',
+                            textAlign: TextAlign.center,
+                            style: kFridgePageStashTextStyle,
+                          )),
+                    ) : Expanded(
                             flex: 11,
                             child: GridView.builder(
                               itemCount: sortedIngredients.length == 0
@@ -126,12 +126,14 @@ class _FridgePageState extends State<FridgePage> {
                                   : sortedIngredients.length,
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
-                                mainAxisSpacing: 10,
-                                crossAxisSpacing: 10,
-                                crossAxisCount: 2,
-                                childAspectRatio: MediaQuery.of(context).size.width /
-              (MediaQuery.of(context).size.height / 1.2)
-                              ),
+                                      mainAxisSpacing: 10,
+                                      crossAxisSpacing: 10,
+                                      crossAxisCount: 2,
+                                      childAspectRatio: MediaQuery.of(context)
+                                              .size
+                                              .width /
+                                          (MediaQuery.of(context).size.height /
+                                              1.2)),
                               itemBuilder: (_, index) {
                                 return FoodInFridgeCard(
                                   familyID: provider.user.familyID!,

@@ -19,7 +19,7 @@ class LogInButton extends StatelessWidget {
         minimumSize: const Size(20, 50),
         elevation: 0,
       ),
-      child: const Text('Log in', style: kLandingPageLogInButtonTextStyle,),
+      child: const Text('Log in (Currently disabled, login with Google)', style: kLandingPageLogInButtonTextStyle,),
     );
   }
 }

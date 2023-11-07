@@ -16,7 +16,7 @@ class SignUpButton extends StatelessWidget {
         minimumSize: const Size(20, 50),
         elevation: 0,
       ),
-      child: const Text('Sign up', style: kLandingPageSignUpButtonTextStyle,),
+      child: const Text('Sign up (Currently disabled, login with Google)', style: kLandingPageSignUpButtonTextStyle,),
     );
   }
 }

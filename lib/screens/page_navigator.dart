@@ -4,7 +4,6 @@ import 'package:familyfridge/services/database_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
-import 'profile_page.dart';
 import 'package:provider/provider.dart';
 import 'package:familyfridge/providers/firebase_user_provider.dart';
 import 'family_page.dart';
@@ -12,6 +11,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:familyfridge/screens/add_food_page.dart';
 import 'family_page.dart';
 import 'find_recipe_page.dart';
+import 'shopping_lists_page.dart';
 
 class PageNavigator extends StatefulWidget {
   @override
@@ -26,7 +26,7 @@ class _PageNavigatorState extends State<PageNavigator> {
     const FridgePage(),
     FindRecipePage(),
     const FamilyPage(),
-    const ProfilePage()
+    const ShoppingListsPage()
   ];
 
   @override
@@ -77,8 +77,8 @@ class _PageNavigatorState extends State<PageNavigator> {
                     text: 'Fridge',
                   ),
                   const GButton(
-                    icon: Icons.assessment_outlined,
-                    text: 'Statistics',
+                    icon: Icons.restaurant_menu,
+                    text: 'Recipes',
                   ),
                   const GButton(
                     icon: Icons.groups_outlined,

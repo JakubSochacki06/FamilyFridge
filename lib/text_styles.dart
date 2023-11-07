@@ -49,3 +49,22 @@ const kFridgePageStashTextStyle = TextStyle(
     fontFamily: 'FranklinGothicMedium',
     color: Colors.black
 );
+
+const kShoppingListsMainTextStyle = TextStyle(
+    fontSize: 20,
+    fontFamily: 'FranklinGothicMedium',
+    color: Colors.black
+);
+
+const kShoppingListsHeaderTextStyle = TextStyle(
+    fontSize: 28,
+    fontFamily: 'FranklinGothicMedium',
+    fontStyle: FontStyle.italic,
+    color: Colors.black
+);
+
+const kShoppingListsSecondaryTextStyle = TextStyle(
+    fontSize: 16,
+    fontFamily: 'FranklinGothicMedium',
+    color: Colors.black38
+);

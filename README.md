@@ -1,16 +1,16 @@
-# familyfridgefinal
+FamilyFridge - Zarządzaj żywnością i planuj posiłki razem z rodziną
+FamilyFridge to innowacyjna aplikacja do zarządzania zapasami żywności w lodówce oraz ułatwiania codziennego gotowania i planowania zakupów.
 
-A new Flutter project.
+Funkcje
+Śledzenie zapasów: Monitoruj aktualną ilość produktów w swojej lodówce. Nie zapomnisz o dacie ważności ani o tym, co masz pod ręką.
 
-## Getting Started
+Wspólne listy zakupów: Twórz listy zakupów razem z rodziną, dzięki czemu zakupy stają się prostsze i bardziej efektywne.
 
-This project is a starting point for a Flutter application.
+Generowanie przepisów: Aplikacja analizuje dostępne składniki i sugeruje przepisy, które można przygotować bez konieczności dodatkowych zakupów.
 
-A few resources to get you started if this is your first Flutter project:
+Powiadomienia o dacie ważności: Otrzymuj powiadomienia o zbliżających się datach ważności produktów, co pomaga uniknąć marnotrawstwa.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Technologia
+Aplikacja została napisana w technologii Flutter, co sprawia, że jest kompatybilna z systemami Android, iOS, webem oraz Linuxem.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Instalacja

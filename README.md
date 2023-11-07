@@ -1,19 +1,16 @@
-![Logo]((https://github.com/JakubSochacki06/FamilyFridge/blob/master/logo.png)](https://github.com/JakubSochacki06/FamilyFridge/blob/master/logo.png))
+## Hack Heroes 2023
 
-## Hack Heroes 2022
+# FamilyFridge
 
-# Moje Miasto
+FamilyFridge to kompleksowe narzędzie do zarządzania zapasami spożywczymi w lodówce oraz organizacji zakupów i gotowania. Oto jej kluczowe funkcje:
 
-Czy myślałeś kiedyś, że miejsce w którym mieszkasz jest nudne, bądź nigdy nawet się nim nie interesowałeś?
-Obudź w sobie świadomość, że jesteś obywatelem miasta z piękną historią oraz miejscami, które zapierają dech w piersiach.
-W aplikacji Moje Miasto dowiesz się o ciekawostkach, miejscach wartych odwiedzenia oraz zarządzie swojego miasta.
-Zobacz wokół siebie! Czy ktoś obok nie potrzebuje pomocy? Dowiedz się w aplikacji Moje Miasto w zakładce "Pomóż".
-Tyle i wkrótce jeszcze więcej czeka na ciebie w aplikacji Moje Miasto!
+Śledzenie zapasów: Aplikacja pozwala użytkownikom śledzić, jakie produkty znajdują się w ich lodówce. Dzięki temu mogą mieć pełen wgląd w dostępne składniki, daty ważności oraz ich składniki odżywcze.
 
-## Moje Miasto jako Wikipedia
+Dodawanie członków rodziny: Użytkownicy mogą dodawać innych członków rodziny do aplikacji, co umożliwia wspólne zarządzanie zapasami i listami zakupów.
 
-Moje Miasto działałoby na zasadzie Wikipedii - mieszkańcy miasta sami by dodawali miejsca godne odwiedzenia, ciekawostki o mieście oraz nowe pomysły.
-Aplikacja ma ogromny potencjał rozwoju dzięki pomocy użytkownków.
+Wspólne listy zakupów: Aplikacja umożliwia tworzenie wspólnych list zakupów dla całej rodziny. Każdy członek rodziny może dodawać produkty do listy, co ułatwia planowanie zakupów.
+
+Generowanie przepisów: Aplikacja analizuje dostępne składniki w lodówce i generuje propozycje przepisów, które można przygotować, wykorzystując te produkty. To pomaga użytkownikom efektywnie wykorzystać dostępne zapasy i uniknąć marnotrawstwa.
 
 ## Jak pobrać?
 
@@ -26,53 +23,10 @@ Aplikacja ma ogromny potencjał rozwoju dzięki pomocy użytkownków.
 Pobierz oraz zainstaluj Android Studio, sklonuj to repozytorium, podłącz telefon do komputera przez kabel usb, a następnie zbuduj aplikację na telefon.
 
 
-## Funkcje
-
-- Wolontariat (Przykładowe ogłoszenie widoczne, gdy wybranym miastem jest Warszawa)
-
-- Ciekawostki o mieście
-
-- Miejsca godne odwiedzenia
-
-- Forum na którym można wysyłać swoje pomysły oraz głosować który z nich jest najlepszy
-
-- Informacje o akutalnym zarządzie miasta.
-
-## Roadmap - co chcę dodać
-
-- Przeniesienie lokalnej bazy danych na Firestore
-
-- Możliwość zmiany avatara w sekcji profil
-
-- Czarny motyw aplikacji
-
-- Możliwość zapamiętania użytkownika, aby nie musiał się cały czas logować
-
-- Możliwość zmiany miasta
-
-- Testy do aplikacji, aby dodawanie nowych funkcji było szybsze i wygodniejsze
-
-- Możliwość zarabiania "punktów", za które przy współpracy z władzą będzie można wymieniać na np.: zniżkę -5% na basen lub teatr. Przy współpracy z dyrektorami możnaby było ustalić ilość punktów za jednorazowe nieprzygotowanie dla ucznia. (Sytuacja w której żadna strona nie przegrywa - uczeń szkoły pomaga za darmo dla jakiejś organizacji lub nawet szkoły, za co dyrektor nagradza go jednorazowym nieprzygotowaniem)
-
-- Nowy design aplikacji
-
-- Wprowadzenie nowych miast do bazy danych
-
-## Chcesz dodać danę od razu do kodu?
-
-Stwórz pull request, dodaj dane tak jak w poniższym przykładzie.
-<a href="https://github.com/JakubSochacki06/MojeMiasto_flutter/blob/master/lib/data/city_places_data.dart">link</a>
-
-## Lekcje, które Moje Miasto mnie nauczyło
-
-Warto prowadzić dokumentacje aplikacji, zmiany w kodzie przychodzą o wiele łatwiej, a sam kod jest o wiele bardziej czysty.
-
 ## Tech Stack
 
 **Client:** Flutter
 
-## Ikony
-<a href="https://www.flaticon.com/">Icony ze strony Flaticon</a>
 
 ## Autor
 

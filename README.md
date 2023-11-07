@@ -16,7 +16,7 @@ Generowanie przepisów: Aplikacja analizuje dostępne składniki w lodówce i ge
 
 #### **Wersja szybka (zalecana)**
 
-<a href="https://github.com/JakubSochacki06/MojeMiasto_flutter/blob/master/app-release.apk">Pobierz plik apk na telefon</a>
+<a href="https://drive.google.com/file/d/1C9n40TQon6ixhRoPBG5GSUu-BUx3A-Vi/view?usp=sharing">Pobierz plik apk na telefon</a>
 
 #### **Wersja wolna**
 

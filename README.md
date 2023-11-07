@@ -1,4 +1,4 @@
-![Logo]([https://github.com/JakubSochacki06/MojeMiasto_flutter/blob/master/assets](https://github.com/JakubSochacki06/FamilyFridge/tree/master/android/app/src/main/res/mipmap-mdpi)/ic_launcher.png)
+![Logo]([https://github.com/JakubSochacki06/MojeMiasto_flutter/blob/master/assets/MojeMiasto.png](https://github.com/JakubSochacki06/FamilyFridge/blob/master/logo.png))
 
 ## Hack Heroes 2022
 
